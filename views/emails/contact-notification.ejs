@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Contact Submission</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 600px; margin: 20px auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
+        h1 { color: #003865; }
+        .field { margin-bottom: 15px; }
+        .field strong { color: #E02454; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>New Message from Smoothflight Travels Website</h1>
+        <p>You have received a new submission from your website's contact form. Here are the details:</p>
+        <hr>
+        <div class="field">
+            <strong>Name:</strong>
+            <p><%= booking.name %></p>
+        </div>
+        <div class="field">
+            <strong>Email:</strong>
+            <p><a href="mailto:<%= booking.email %>"><%= booking.email %></a></p>
+        </div>
+        <div class="field">
+            <strong>Phone:</strong>
+            <p><%= booking.phone %></p>
+        </div>
+        <div class="field">
+            <strong>Project:</strong>
+            <p><%= booking.project %></p>
+        </div>
+        <div class="field">
+            <strong>Subject:</strong>
+            <p><%= booking.subject %></p>
+        </div>
+        <div class="field">
+            <strong>Message:</strong>
+            <p><%= booking.message %></p>
+        </div>
+        <hr>
+        <p>This message was sent on <%= new Date(booking.submittedAt).toLocaleString() %>.</p>
+    </div>
+</body>
+</html>
