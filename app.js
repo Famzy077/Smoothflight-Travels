@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const ejs = require('ejs');
 const path = require('path');
-const { Resend } = require('resend'); // Import Resend
+const { Resend } = require('resend');
 require('dotenv').config();
 
 // Import Mongoose Models
@@ -23,7 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // --- Database Connection ---
 mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log('MongoDB connected successfully.'))
+  .then(() => console.log('MongoDB connected successfully...'))
   .catch(err => {
     console.error('MongoDB connection error:', err.message);
     console.error(err);
